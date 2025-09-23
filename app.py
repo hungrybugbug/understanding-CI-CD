@@ -7,6 +7,6 @@ def login():
     return "Login Page"
 @app.route("/")
 def home():
-    return "Hello, GitHub Act!"
+    return "Hello, GitHub Actaa!"
 
 
