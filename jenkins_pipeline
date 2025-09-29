@@ -1,0 +1,19 @@
+pipeline{
+    agent any
+    parameter{
+        string(name:branch, defaultValue:'main',description:"which git branch to use")
+        choice(name:"ENV",choices:['dev','staging','prod'],description:'deployment enivronment')
+    }
+
+    stages{
+        stage('checkout')
+            steps{
+                git branch "${params.branch}" url:" url here"
+            }
+        stage('Deploy')
+            steps{
+                echo "Deploying to ${params.ENV} environment"
+            }    
+    }
+}
+
